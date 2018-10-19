@@ -22,8 +22,10 @@ app.use(flash());
 
 //connecting to DB
 var mongoose = require("mongoose");
-//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true});
-mongoose.connect("mongodb://default:default1234@ds137003.mlab.com:37003/saviosdb");
+//mongoose.connect("mongodb://localhost:27017/yelp_camp",{useNewUrlParser: true}); //local URL
+//mongoose.connect("mongodb://default:default1234@ds137003.mlab.com:37003/saviosdb"); // MLab URK
+mongoose.connect(process.env.DATABASEURL);
+
 //mongodb://<dbuser>:<dbpassword>@ds137003.mlab.com:37003/saviosdb
 //seedDB();
 
